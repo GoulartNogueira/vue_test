@@ -1,0 +1,58 @@
+#bannerBrasil a
+{   display:table;
+    width:100%;
+    padding:16px 10px 10px 10px;
+    box-sizing:border-box;
+    position:relative;
+    text-decoration:none;
+    height:100%;
+    background:#EAEAEA;
+    border-radius: 2px;
+}
+
+#bannerBrasil{
+    width:70%;
+}
+
+#textoPromoBrasil
+{
+    font-family:"Latam-Sans-Regular-Italic";
+    color:#1B0088;
+    font-size: 1.3em;
+    vertical-align:top;
+    padding-left:138px;
+    margin-top: 25px;
+    width: 45%;
+}
+
+#textoBoton{
+    color:white;
+    background: #ED1650;
+    border-radius: 10px;
+    font-family: "Latam-Sans-Regular-Italic";
+    font-size: 1.1em;
+    float: right;
+    position: relative;
+    top: -45px;
+    right: 20px;
+    padding: 8px 20px;
+}
+
+.bannerImg{
+    float:right;
+    position:relative;
+    top:-10px;
+    left:5px;
+    width:110px;
+    height:40px;
+}
+
+#contenedorImagen{
+    width:30%;
+    background:#110050;
+}
+
+#contenedorPadre{
+	display:flex;
+	width:100%;
+}

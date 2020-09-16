@@ -1,17 +1,195 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>vue</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but vue doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<!DOCTYPE HTML>
+<!--
+	Photon by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+        <title id="title">AxZ Compare</title>
+        <meta id="meta_description" name="description" content="O jeito mais fácil, rápido e confiável de descobir o que é importante pra você."/>
+        <meta id="meta_author" name="author" content="André Goulart Nogueira"/>
+        <meta id="meta_keywords" name="keywords" content="descobrir, buscar, comparar"/>
+		<meta http-equiv="content-language" content="pt-br" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8"/>
+		<meta name="rating" content="general" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="stylesheet" href="./assets/css/simpleslider.css" />
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+		
+		<!--
+		<script src="./assets/js/update_meta.js"></script>
+		<script v-bind:titlename="{{produtos.name}}">
+			document.title = titlename;
+		</script>
+		-->
+		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+
+		<!-- Google ADS -->
+		<!-- <script data-ad-client="ca-pub-4885726053170676" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		-->
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<div class="col-6 col-12-medium imp-medium">
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12104357-2"></script>
+		</div>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-12104357-2');
+		</script>
+		<!-- END Google Analytics -->
+
+		<!-- Google Tag Manager -->
+		<!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-N8TVM3P');</script>-->
+		<!-- End Google Tag Manager -->
+
+	</head>
+
+<body class="is-preload">
+<!-- Google Tag Manager (noscript) -->
+<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N8TVM3P"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+<!-- End Google Tag Manager (noscript) -->
+
+	<!-- Header -->
+	<section id="header">
+		<div class="inner">
+			<h1>Oi, eu sou <strong><img src="./images/white_round_AxZ.png" style="max-width:65px" alt="AxZ"/><span id="prod_name"</span></strong>.<br></h1>
+			<!-- <h2>Posso te ajudar a descobrir seu {{produto.name}}?</h2> -->
+			<h2>Você já sabe o que é importante <strong>pra você</strong>?</h2>
+			<span class="center"><img src="./images/white_round.png" style="max-width:300px" alt="AxZ compare"></span>
+			<p><strong>A forma mais fácil, rápida e confiável de obter uma recomendação personalizada!</strong><br>
+			<p>...e ainda por cima, <strong>100% GRATUITA</strong>!
+			<br/>
+			<ul class="actions special">
+				<li><a href="#subjects" class="button scrolly">Comparar</a></li>
+				<!-- <li><a href="#build" class="button scrolly">Faça seu comparador</a></li> -->
+			</ul>
+	</div>
+	</section>
+
+
+		<!-- Intro -->
+		<section id="intro" class="main style2">
+			<div class="container">
+				<div class="row gtr-150">
+					<div class="col-6 col-12-medium">
+						<header class="major">
+							<h2>Recomendações Personalizadas<br />
+							</h2>
+						</header>
+						<p>Nossas recomendações são totalmente personalizadas, considerando o que é importante pra você!</p>
+						<p>Nós não vendemos os produtos, nem recebemos dinheiro por indicar um produto ou outro. Pensamos apenas no que é melhor para você!</p>
+						<p> Assim, garantimos <strong>justiça, neutralidade e qualidade</strong> nas nossas recomendação!</p>
+					</div>
+					<div class="col-6 col-12-medium imp-medium">
+						<span class="image fit"><img src="./images/diff_people.jpg" alt="customer centric image" /></span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	<section id="subjects" class="main style3 special" >
+		<div class="container">
+			<header class="major">
+				<h1>O que você quer descobrir?</h1>
+			</header>
+			<div class="row gtr-150">
+				<div class="col-6 col-12-medium" v-for="subject in files"> <!-- NOT GETTING FROM FILES YET -->
+					<br>
+					<a :href="'/'+subject+'/#rec'">
+						<div class="wrapper">
+							<h2>{{subject}}</h2>
+							<span class="image fit"><img :src="'/'+subject+'/capa.png'" :alt="'imagem de '+subject"></span>
+							<span>{{description[subject]}}</span>
+						</div>
+					</a>
+				</div>	
+				<div id="criar" class="col-6 col-12-medium">
+					<br>
+					<a href="./builder/index.html#build">
+						<div class="wrapper">
+							<h2>Crie o seu próprio comparador!</h2>
+							<span class="icon solid major fa-plus-circle"></span>
+								<br>
+							<span>Ajude seus amigos e clientes a tomarem a melhor decisão! Crie sem comparador agora mesmo. Leva só 5 minutinhos...</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="two" class="main style2">
+		<div class="container">
+			<div class="row gtr-150">
+				<div class="col-6 col-12-medium">
+					<ul class="major-icons">
+						<li><span class="icon solid style1 major fa-balance-scale"></span></li>
+						<li><span class="icon solid style3 major fa-users"></span></li>
+						<li><span class="icon solid style4 major fa-bolt"></span></li>
+						<li><span class="icon solid style5 major fa-sliders-h"></span></li>
+					</ul>
+				</div>
+				<div class="col-6 col-12-medium">
+					<header class="major">
+						<h2>Qualidade, Justiça e Velocidade</h2>
+					</header>
+					<p>Você precisa tomar uma decisão e não sabe nem por onde começar? Todo mundo já passou por isso...</p>
+					<p>AxZ é a forma mais <strong>rápida</strong>, fácil, <strong>justa</strong> e gratuida de tomar decisões e receber recomendações <strong>personalizadas</strong> sem viés ou interesse de te empurrar determinado produto ou serviço.</p>
+					<!--<p>Ou o tempo todo as pessoas te pedem uma recomendação e sua resposta é sempre a mesma: <strong>Depende</strong>, o que é importante pra você?</p>-->
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			<li><a href="https://www.linkedin.com/in/andr%C3%A9-goulart-nogueira-9a7b8922/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<!-- <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+			<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li> -->
+			<li><a href="mailto:goulartnogueira@gmail.com" class="icon solid alt fa-envelope"><span class="label">E-mail</span></a></li>
+			<li><a href="tel:+55(16)981-600-000" class="icon solid alt fa-phone"><span class="label">Telefone</span></a></li>
+		</ul>
+		 <ul class="copyright">
+			<li>&copy; André Goulart Nogueira</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</section>
+
+</body>
+		<!-- Scripts -->
+        <script src="./assets/js/jquery.min.js"></script>
+        <script src="./assets/js/jquery.scrolly.min.js"></script>
+		<script src="./assets/js/browser.min.js"></script>
+		<script src="./assets/js/breakpoints.min.js"></script>
+		<script src="./assets/js/util.js"></script>
+		<script src="./assets/js/main.js"></script>		
+		<script src="./assets/js/display_subjects.js"></script>		
+		
+<!-- LOCAL
+<link ref="stylesheet" src="./assets/css/rangeslider.css">
+<script src="./assets/js/rangeslider.min.js"></script>
+ 
+<link ref="stylesheet" src="./node_modules/vue-slider-component/theme/default.css">
+<script src="./node_modules/vue-slider-component/dist/vue-slider-component.umd.min.js"></script>
+<script>
+  new Vue({
+    el: '.wrapper',
+    components: {
+      VueSlider: window['vue-slider-component']
+    }
+  })
+</script>
+-->
 </html>

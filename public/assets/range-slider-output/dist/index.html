@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Range slider output</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./range-slider-style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main>
+  <form oninput="output.value = range.valueAsNumber">
+    <h2>
+      Range slider
+    </h2>
+    <div class="range">
+
+      <input name="range" type="range" min="0" max="5" step="0.1">
+      <div class="range-output">
+        <output class="output" name="output" for="range">
+          2
+        </output>
+      </div>
+    </div>
+  </form>
+
+  <form oninput="output.value = range.valueAsNumber">
+    <h2>
+      Range slider
+    </h2>
+    <div class="range">
+
+      <input name="range" type="range" min="0" max="5" step="0.1">
+      <div class="range-output">
+        <output class="output" name="output" for="range">
+          2
+        </output>
+      </div>
+    </div>
+  </form>
+</main>
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script  src="range-slider-output.js"></script>
+
+</body>
+</html>
