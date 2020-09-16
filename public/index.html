@@ -105,10 +105,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<div class="row gtr-150">
 				<div class="col-6 col-12-medium" v-for="subject in files"> <!-- NOT GETTING FROM FILES YET -->
 					<br>
-					<a :href="'/'+subject+'/#rec'">
+					<a :href="'/subjects/'+subject+'/#rec'">
 						<div class="wrapper">
 							<h2>{{subject}}</h2>
-							<span class="image fit"><img :src="'/'+subject+'/capa.png'" :alt="'imagem de '+subject"></span>
+							<span class="image fit"><img :src="'/subjects/'+subject+'/capa.png'" :alt="'imagem de '+subject"></span>
 							<span>{{description[subject]}}</span>
 						</div>
 					</a>
